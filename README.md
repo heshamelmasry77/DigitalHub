@@ -16,8 +16,8 @@ yarn run build
 ```
 ## Previewing Locally
 npm install -g serve
-# -s flag means serve it in Single-Page Application mode
-# which deals with the routing problem below
+## -s flag means serve it in Single-Page Application mode
+## which deals with the routing problem below
 ```
 serve -s dist
 ```
