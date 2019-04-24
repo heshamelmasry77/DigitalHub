@@ -1,15 +1,10 @@
 <template>
-  <div class="news">
-    <h1>News</h1>
-    <h2>Categories</h2>
-    <ul>
-      <li v-for="category in categories" v-bind:key="category.id">{{ category }}</li>
-    </ul>
+  <div class="headlines">
     <h3>Headlines</h3>
     <ul>
-      <li v-for="headline in headLines" v-bind:key="headline.id">
-        <img :alt="headline.title" v-if="headline.urlToImage" :src="headline.urlToImage" />
+      <li v-for="(headline, index) in headLines" v-bind:key="index">
         <p>{{ headline.title }}</p>
+        <img :src="headline.urlToImage" :alt="headline.title" v-if="headline.urlToImage" />
       </li>
     </ul>
   </div>
@@ -20,20 +15,11 @@ import axios from "axios";
 import NEWS_API_KEY from "../utils/constants";
 
 export default {
-  name: "News",
+  name: "Headlines",
   props: {},
   data() {
     return {
       key: NEWS_API_KEY,
-      categories: [
-        "business",
-        "entertainment",
-        "general",
-        "health",
-        "science",
-        "sports",
-        "technology"
-      ],
       headLines: []
     };
   },
