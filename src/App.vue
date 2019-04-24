@@ -1,22 +1,12 @@
 <template>
   <div id="app">
-    <!--<HelloWorld msg="Welcome to Your Vue.js App" />-->
-    <News />
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </div>
+    <router-view />
   </div>
 </template>
-
-<script>
-// import HelloWorld from "./components/HelloWorld.vue";
-import News from "./components/News.vue";
-
-export default {
-  name: "app",
-  components: {
-    // HelloWorld,
-    News
-  }
-};
-</script>
 
 <style>
 #app {
