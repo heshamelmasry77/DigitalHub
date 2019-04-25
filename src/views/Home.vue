@@ -6,7 +6,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import Headlines from "../components/Headlines";
 import Categories from "../components/Categories";
 

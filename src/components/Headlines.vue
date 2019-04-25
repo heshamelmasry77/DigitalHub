@@ -1,12 +1,26 @@
 <template>
   <div class="headlines">
-    <h3>Headlines</h3>
-    <ul>
-      <li v-for="(headline, index) in headLines" v-bind:key="index">
-        <p>{{ headline.title }}</p>
-        <img :src="headline.urlToImage" :alt="headline.title" v-if="headline.urlToImage" />
-      </li>
-    </ul>
+    <div class="container">
+      <div class="d-flex justify-content-start mt-1">
+        <h2><span class="badge badge-secondary">Headlines</span></h2>
+      </div>
+      <div class="row" v-if="headLines.length > 0">
+        <div class="col-sm-3" v-for="(headline, index) in headLines" v-bind:key="index">
+          <div class="card" style="width: 100%;">
+            <img
+              :src="headline.urlToImage"
+              :alt="headline.title"
+              v-if="headline.urlToImage"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ headline.title }}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h1 v-else>Oh no headlines 😢</h1>
+    </div>
   </div>
 </template>
 
