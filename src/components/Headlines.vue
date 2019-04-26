@@ -37,7 +37,7 @@ export default {
       headLines: []
     };
   },
-  mounted() {
+  created() {
     axios
       .get(`https://newsapi.org/v2/top-headlines?country=ae&apiKey=${this.key}`)
       .then(response => {
