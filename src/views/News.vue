@@ -27,7 +27,7 @@
           </div>
         </div>
       </div>
-      <h1 v-else>Oh no News 😢</h1>
+      <h1 v-else>loading...</h1>
     </div>
   </div>
 </template>
