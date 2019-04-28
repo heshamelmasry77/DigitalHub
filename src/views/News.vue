@@ -14,7 +14,7 @@
       <div class="row" v-if="articles.length > 0">
         <div class="col-sm-3 mt-2" v-for="(article, index) in articles" v-bind:key="index">
           <div class="card" style="width: 100%">
-            <img
+            <v-lazy-image
               :src="article.urlToImage"
               :alt="article.title"
               v-if="article.urlToImage"
@@ -31,14 +31,18 @@
     </div>
   </div>
 </template>
-
+<style></style>
 <script>
 import router from "../router";
 import axios from "axios";
 import NEWS_API_KEY from "../utils/constants";
+import VLazyImage from "v-lazy-image";
 
 export default {
   name: "News",
+  components: {
+    VLazyImage
+  },
   data() {
     return {
       key: NEWS_API_KEY,
