@@ -7,12 +7,11 @@
       <div class="row" v-if="headLines.length > 0">
         <div class="col-sm-3 card-custom" v-for="(headline, index) in headLines" v-bind:key="index">
           <div class="card" style="width: 100%;">
-            <img
+            <SVG-filter-image
               :src="headline.urlToImage"
-              :alt="headline.title"
               v-if="headline.urlToImage"
-              class="card-img-top"
-            />
+              :alt="headline.title"
+            ></SVG-filter-image>
             <div class="card-body">
               <h5 class="card-title">{{ headline.title }}</h5>
               <p class="card-text">{{ headline.description }}</p>
@@ -47,10 +46,14 @@ img {
 <script>
 import axios from "axios";
 import NEWS_API_KEY from "../utils/constants";
+import SVGFilterImage from "../components/SVGFilterImage";
 
 export default {
   name: "Headlines",
   props: {},
+  components: {
+    SVGFilterImage
+  },
   data() {
     return {
       key: NEWS_API_KEY,

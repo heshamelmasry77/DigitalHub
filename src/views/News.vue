@@ -12,14 +12,17 @@
         </a>
       </div>
       <div class="row" v-if="articles.length > 0">
-        <div class="col-sm-3 mt-2" v-for="(article, index) in articles" v-bind:key="index">
+        <div
+          class="col-sm-3 mt-2 card-custom"
+          v-for="(article, index) in articles"
+          v-bind:key="index"
+        >
           <div class="card" style="width: 100%">
-            <v-lazy-image
+            <SVG-filter-image
               :src="article.urlToImage"
-              :alt="article.title"
               v-if="article.urlToImage"
-              class="card-img-top"
-            />
+              :alt="article.title"
+            ></SVG-filter-image>
             <div class="card-body">
               <h5 class="card-title">{{ article.title }}</h5>
               <p class="card-text">{{ article.description }}</p>
@@ -31,17 +34,35 @@
     </div>
   </div>
 </template>
-<style></style>
+<style>
+.card-custom {
+  background: #f5f5f5;
+  padding: 10px;
+  display: inline-block;
+  margin: 0 0 1em;
+  cursor: pointer;
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+  transition: all 100ms ease-in-out;
+}
+.card-custom:hover {
+  transform: translateY(-0.5em);
+  background: #ebebeb;
+}
+img {
+  display: block;
+  width: 100%;
+}
+</style>
 <script>
 import router from "../router";
 import axios from "axios";
 import NEWS_API_KEY from "../utils/constants";
-import VLazyImage from "v-lazy-image";
-
+import SVGFilterImage from "../components/SVGFilterImage";
 export default {
   name: "News",
   components: {
-    VLazyImage
+    SVGFilterImage
   },
   data() {
     return {
@@ -49,9 +70,6 @@ export default {
       category: "",
       articles: []
     };
-  },
-  created() {
-    this.category = this.$route.params.category || "general";
   },
   mounted() {
     axios
