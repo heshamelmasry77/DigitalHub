@@ -7,14 +7,14 @@
         </filter>
       </defs>
     </svg>
-    <v-lazy-image :src="src" :alt="alt" @load="animate"></v-lazy-image>
+    <v-lazy-image :src="src" @load="animate" :alt="alt"></v-lazy-image>
   </div>
 </template>
 
 <script>
 import VLazyImage from "v-lazy-image";
+
 export default {
-  name: "svgFilterImage",
   components: {
     VLazyImage
   },
@@ -27,7 +27,7 @@ export default {
     },
     duration: {
       type: Number,
-      default: 500
+      default: 1000
     }
   },
   data: () => ({ rate: 1 }),
