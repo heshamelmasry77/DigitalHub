@@ -1,4 +1,4 @@
-# digital-hub-uae-challenge
+# Digital-hub-uae-challenge
 
 project to connect to the news api and get recent news for different online newspapers.
 
