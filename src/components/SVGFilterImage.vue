@@ -15,7 +15,6 @@
 import VLazyImage from "v-lazy-image";
 
 export default {
-  name: "svgFilterImage",
   components: {
     VLazyImage
   },
