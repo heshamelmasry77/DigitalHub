@@ -5,16 +5,16 @@ project to connect to the news api and get recent news for different online news
 The project is using vue cli latest.
 
 The main folder is the ``` src ``` folder as it contain the project 
-assests folder has the pictures
-components folder has our shared components
-utiles folder has the project constants 
-views folder has the project main pages
+``` assests ``` folder has the pictures
+``` components ``` folder has our shared components
+``` utiles ``` folder has the project constants 
+``` views ``` folder has the project main pages
 
-The router file : contains the routes of the project.
+The router file ``` router.js ``` : contains the routes of the project.
 
-test folder is for the test we have for the project.
+``` test ``` folder is for the test we have for the project.
 
-vue.config is for the config of the vue project.
+``` vue.config ``` is for the config of the vue project.
 
 
 ## Project setup
