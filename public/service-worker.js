@@ -24,7 +24,13 @@ if (workbox) {
   workbox.routing.registerRoute(
     new RegExp("https://newsapi.org/v2"),
     workbox.strategies.networkFirst({
-      cacheName: "api"
+      cacheName: "api",
+        plugins: [
+            new workbox.expiration.Plugin({
+                maxEntries: 60,
+                maxAgeSeconds: 30 * 24 * 60 * 60 // 30 Days
+            })
+        ]
     })
   );
 
