@@ -20,7 +20,7 @@
               <router-link class="nav-link" to="/">Home</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link " to="/news">News</router-link>
+              <router-link class="nav-link" to="/news">News</router-link>
             </li>
           </ul>
         </div>
@@ -29,7 +29,13 @@
     </div>
   </div>
 </template>
+<script>
+import Vue from "vue";
 
+import VueRouter from "vue-router";
+
+Vue.use(VueRouter);
+</script>
 <style>
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
 

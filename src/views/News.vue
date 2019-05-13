@@ -3,13 +3,13 @@
     <div class="container">
       <div class="jumbotron">
         <h1 class="display-4">{{ category }}</h1>
-        <a
-          class="btn btn-primary btn-lg"
+        <button
+          class="btn btn-primary btn-lg back-btn"
           style="cursor: pointer; text-decoration: underline; color:white;"
           v-on:click="navigate()"
         >
           Navigate to Home page
-        </a>
+        </button>
       </div>
       <div class="row" v-if="articles.length > 0">
         <div
