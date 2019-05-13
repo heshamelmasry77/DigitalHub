@@ -59,7 +59,7 @@ yarn run test:unit
 ```
 ### to view the app offline correctly 
 
-download ``` web server for chrome ```
+download the extension ``` web server for chrome ```
 
 then open it and choose your project folder
 choose the dist folder then clock on the web server url.
