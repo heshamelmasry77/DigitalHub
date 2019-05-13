@@ -15,8 +15,19 @@
             <div class="card-body">
               <h5 class="card-title">{{ headline.title }}</h5>
               <p class="card-text">{{ headline.description }}</p>
-              <input :id="index" class="toggle-heart" type="checkbox" />
-              <label :for="index" class="toggle-heart-label"><span>❤</span></label>
+              <input
+                :id="index"
+                class="toggle-heart"
+                type="checkbox"
+                v-bind:checked="headline.loved"
+                @click="headline.loved = !headline.loved"
+              />
+              <label
+                :for="index"
+                class="toggle-heart-label"
+                v-bind:class="{ 'toggle-heart-checked': headline.loved }"
+                ><span>❤</span></label
+              >
             </div>
           </div>
         </div>
@@ -37,14 +48,17 @@ $bubble-r: 0.5 * $bubble-d; // bubble-radius
   -webkit-backface-visibility: hidden;
   transition: all 100ms ease-in-out;
 }
+
 .card-custom:hover {
   transform: translateY(-0.5em);
   background: #ebebeb;
 }
+
 img {
   display: block;
   width: 100%;
 }
+
 .toggle-heart {
   position: absolute;
   left: -100vw;
@@ -103,7 +117,7 @@ img {
   }
 }
 
-.toggle-heart:checked + label {
+.toggle-heart-checked {
   color: #e2264d;
   will-change: font-size;
   animation: heart 1s cubic-bezier(0.17, 0.89, 0.32, 1.49);
@@ -145,7 +159,11 @@ export default {
     axios
       .get(`https://newsapi.org/v2/top-headlines?country=ae&apiKey=${this.key}`)
       .then(response => {
-        this.headLines = response.data.articles;
+        const articlesData = response.data.articles;
+        articlesData.map(function(e) {
+          e.loved = false;
+        });
+        this.headLines = articlesData;
       });
   }
 };
