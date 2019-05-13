@@ -29,13 +29,7 @@
     </div>
   </div>
 </template>
-<script>
-import Vue from "vue";
 
-import VueRouter from "vue-router";
-
-Vue.use(VueRouter);
-</script>
 <style>
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
 
