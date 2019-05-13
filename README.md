@@ -57,6 +57,18 @@ yarn run lint
 ```
 yarn run test:unit
 ```
+### to view the app offline correctly 
+
+download ``` web server for chrome ```
+
+then open it and choose your project folder
+choose the dist folder then clock on the web server url.
+
+web server for chrome  will load your app.
+now inspect and choose application > offline and then hard refresh the app should still work.
+
+
+
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
