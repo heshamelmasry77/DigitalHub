@@ -1,5 +1,6 @@
 module.exports = {
   lintOnSave: true,
+  publicPath: '<DigitalHub>',
   pwa: {
     // configure the workbox plugin
     workboxPluginMode: "InjectManifest",
